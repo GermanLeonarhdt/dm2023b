@@ -60,11 +60,11 @@ hs <- makeParamSet(
   makeIntegerParam("min_data_in_leaf", lower = 1L, upper = 8000L),
   makeIntegerParam("num_leaves", lower = 16L, upper = 1024L),
   makeIntegerParam("envios", lower = 5000L, upper = 15000L),
-  makeIntegerParam("num_leaves", lower = 16L, upper = 1024L),
-  makeNumericParam("min_gain_to_split", lower = 0.01, upper = 100),
-  makeNumericParam("lambda_l1", lower = 0.01, upper = 100),
-  makeNumericParam("lambda_l2", lower = 0.01, upper = 15)
+  makeNumericParam("min_gain_to_split", lower = 0.00, upper = 15.0),
+  makeNumericParam("lambda_l1", lower = 0.00, upper = 100.0),
+  makeNumericParam("lambda_l2", lower = 0.00, upper = 100.0)
   )
+
 
 #------------------------------------------------------------------------------
 # graba a un archivo los componentes de lista
