@@ -13,7 +13,7 @@ require("yaml")
 PARAM <- list()
 PARAM$experimento <- "DR6210Defla"
 
-PARAM$exp_input <- "CA6110Defla"
+PARAM$exp_input <- "CA6110"
 
 PARAM$variables_intrames <- TRUE # atencion esto esta en TRUE
 
