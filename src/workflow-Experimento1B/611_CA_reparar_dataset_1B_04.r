@@ -39,7 +39,9 @@ GrabarOutput <- function() {
 CorregirCampoMes <- function(pcampo, pmeses) {
   tbl <- dataset[, list(
     "v1" = shift(get(pcampo), 1, type = "lag"),
-    "v2" = shift(get(pcampo), 1, type = "lead")
+    "v2" = shift(get(pcampo), 2, type = "lag"),
+    "v3" = shift(get(pcampo), 1, type = "lead"),
+    "v4" = shift(get(pcampo), 2, type = "lead")
   ),
   by = numero_de_cliente
   ]
