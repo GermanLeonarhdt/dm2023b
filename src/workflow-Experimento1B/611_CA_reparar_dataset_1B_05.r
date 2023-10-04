@@ -10,7 +10,7 @@ require("yaml")
 
 # Parametros del script
 PARAM <- list()
-PARAM$experimento <- "CA6110_1B_04"
+PARAM$experimento <- "CA6110_1B_05"
 PARAM$dataset <- "./datasets/competencia_2023.csv.gz"
 
 # valores posibles
@@ -40,8 +40,10 @@ CorregirCampoMes <- function(pcampo, pmeses) {
   tbl <- dataset[, list(
     "v1" = shift(get(pcampo), 1, type = "lag"),
     "v2" = shift(get(pcampo), 2, type = "lag"),
-    "v3" = shift(get(pcampo), 1, type = "lead"),
-    "v4" = shift(get(pcampo), 2, type = "lead")
+    "v3" = shift(get(pcampo), 3, type = "lag"),
+    "v4" = shift(get(pcampo), 1, type = "lead"),
+    "v5" = shift(get(pcampo), 2, type = "lead"),
+    "v6" = shift(get(pcampo), 3, type = "lead")
   ),
   by = numero_de_cliente
   ]
