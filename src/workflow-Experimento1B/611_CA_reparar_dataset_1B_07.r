@@ -38,20 +38,18 @@ GrabarOutput <- function() {
 
 CorregirCampoMes <- function(pcampo, pmeses) {
   tbl <- dataset[, list(
-    "v1" = shift(get(pcampo), 1, type = "lag"),
-    "v2" = shift(get(pcampo), 1, type = "lag")
+    "v1" = shift(get(pcampo), 1, type = "lag")
       ),
   by = numero_de_cliente
   ]
 
   tbl[, numero_de_cliente := NULL]
-  tbl[, promedio := rowMeans(tbl, na.rm = TRUE)]
-
+  
   dataset[
     ,
     paste0(pcampo) := ifelse(!(foto_mes %in% pmeses),
       get(pcampo),
-      tbl$promedio
+      tbl$v1
     )
   ]
 }
