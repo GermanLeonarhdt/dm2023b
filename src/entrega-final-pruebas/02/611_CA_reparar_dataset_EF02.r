@@ -10,7 +10,7 @@ require("yaml")
 
 # Parametros del script
 PARAM <- list()
-PARAM$experimento <- "CA6110EF01"
+PARAM$experimento <- "CA6110EF02"
 PARAM$dataset <- "./datasets/competencia_2023.csv.gz"
 
 # valores posibles
@@ -37,30 +37,19 @@ GrabarOutput <- function() {
 #------------------------------------------------------------------------------
 
 CorregirCampoMes <- function(pcampo, pmeses) {
-  tbl <- dataset[, list(numero_de_cliente, .(V1=max(get(pcampo))), .(V2=min(get(pcampo))))
-                 ,
-                 by = numero_de_cliente
+  tbl <- dataset[, list(
+    "v1" = shift(get(pcampo), 1, type = "lag")
+  ),
+  by = numero_de_cliente
   ]
   
   tbl[, numero_de_cliente := NULL]
-  tbl[, V2 := as.numeric(V2)]
-  tbl[, V3 := as.numeric(V3)]
-  tbl[, V4 := runif(nrow(tbl), min=V3, max=V2)]
-  tbl[, V5 := runif(nrow(tbl), min=V3, max=V2)]
-  tbl[, V6 := runif(nrow(tbl), min=V3, max=V2)]
-  tbl[, V7 := runif(nrow(tbl), min=V3, max=V2)]
-  tbl[, V8 := runif(nrow(tbl), min=V3, max=V2)]
-  tbl[, V2 := NULL]
-  tbl[, V3 := NULL]
-  tbl[, numero_de_cliente := NULL]
-  tbl[, promedio := rowMeans(tbl, na.rm = TRUE)]
-  
   
   dataset[
     ,
     paste0(pcampo) := ifelse(!(foto_mes %in% pmeses),
                              get(pcampo),
-                             tbl$promedio 
+                             tbl$v1
     )
   ]
 }

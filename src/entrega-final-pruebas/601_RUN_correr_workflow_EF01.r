@@ -10,11 +10,11 @@ options(error = function() {
 # corrida de cada paso del workflow
 
 # primeros pasos, relativamente rapidos
-source("~/dm2023b/src/workflow-inicial/z611_CA_reparar_dataset.r")
-source("~/dm2023b/src/workflow-inicial/z621_DR_corregir_drifting.r")
-source("~/dm2023b/src/workflow-inicial/z631_FE_historia.r")
-source("~/dm2023b/src/workflow-inicial/z641_TS_training_strategy.r")
+source("~/dm2023b/src/entrega-final-pruebas/01/611_CA_reparar_dataset_EF01.r")
+source("~/dm2023b/src/entrega-final-pruebas/01/621_DR_corregir_drifting_EF01.r")
+source("~/dm2023b/src/entrega-final-pruebas/01/631_FE_historia_EF01.r")
+source("~/dm2023b/src/entrega-final-pruebas/01/641_TS_training_strategy_EF01.r")
 
 # ultimos pasos, muy lentos
-source("~/dm2023b/src/workflow-inicial/z651_HT_lightgbm.r")
-source("~/dm2023b/src/workflow-inicial/z661_ZZ_final.r")
+source("~/dm2023b/src/entrega-final-pruebas/01/651_HT_lightgbm_EF01.r")
+source("~/dm2023b/src/entrega-final-pruebas/01/661_ZZ_final_EF01.r")
