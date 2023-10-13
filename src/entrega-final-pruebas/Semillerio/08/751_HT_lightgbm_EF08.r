@@ -31,9 +31,9 @@ options(error = function() {
 
 #Parametros del script
 PARAM  <- list()
-PARAM$experimento  <- "HT7510EF06"
+PARAM$experimento  <- "HT7510EF08"
 
-PARAM$exp_input  <- "TS7410EF06"
+PARAM$exp_input  <- "TS7410EF08"
 
 PARAM$lgb_crossvalidation_folds  <- 5  #En caso que se haga cross validation, se usa esta cantidad de folds
 
@@ -76,7 +76,7 @@ PARAM$lgb_basicos <- list(
 
 #Aqui se cargan los hiperparametros que se optimizan en la Bayesian Optimization
 PARAM$bo_lgb <- makeParamSet(
-         makeNumericParam("learning_rate",    lower=    0.02, upper=     0.3),
+         makeNumericParam("learning_rate",    lower=    0.01, upper=     0.4),
          makeNumericParam("feature_fraction", lower=    0.01, upper=     1.0),
          makeIntegerParam("num_leaves",       lower=    8L,   upper=  1024L),
          makeIntegerParam("min_data_in_leaf", lower=  100L,   upper= 50000L)
