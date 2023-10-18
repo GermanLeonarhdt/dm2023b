@@ -12,7 +12,7 @@ gc( full= TRUE )                 #garbage collection
 
 require("data.table")
 require("yaml")
-
+#
 
 #Parametros del script
 PARAM  <- list()

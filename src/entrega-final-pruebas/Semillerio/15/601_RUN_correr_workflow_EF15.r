@@ -5,7 +5,7 @@ options(error = function() {
   options(error = NULL)
   stop("exiting after script error")
 })
-
+#
 
 # corrida de cada paso del workflow
 

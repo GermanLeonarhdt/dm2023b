@@ -4,7 +4,7 @@
 #Necesita para correr en Google Cloud
 # 128 GB de memoria RAM
 #   8 vCPU
-
+#
 # pensado para datasets con UNDERSAPLING de la clase mayoritaria
 
 #limpio la memoria
