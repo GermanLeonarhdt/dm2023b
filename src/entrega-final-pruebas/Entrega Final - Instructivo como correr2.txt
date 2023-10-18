@@ -1,0 +1,9 @@
+﻿Para obtener el resultado final subido HB7960EF_12-18_ampliado_hibrid_simple_10000 es necesario correr los siguientes scripts en el siguiente orden:
+
+dm2023b/src/entrega-final-pruebas/Semillerio/12/601_RUN_correr_workflow_EF12.r
+dm2023b/src/entrega-final-pruebas/Semillerio/12/601_RUN_correr_workflow_EF12_2.r
+dm2023b/src/entrega-final-pruebas/Semillerio/18/601_RUN_correr_workflow_EF18.r
+dm2023b/src/entrega-final-pruebas/Semillerio/18/601_RUN_correr_workflow_EF18_2.r
+dm2023b/src/entrega-final-pruebas/Semillerio/hibridacion_modelo_ganador/796_HB_semillerios_hibridacion_modelo_ganador_2.r
+
+Aclaracion: el modelo EF18, EF12_2 y EF18_2 aun estaban corriendo cuando se realizo la hibridacion por lo que es posible que si se realiza este ejercicio con la semilla 300 del EF18 el resultado sea ligeramente diferente. 
